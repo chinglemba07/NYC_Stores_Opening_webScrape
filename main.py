@@ -14,8 +14,15 @@ for shop in shop_elements:
     shop_head = shop.find('h2', class_='c-entry-box--compact__title')
     if shop_head is None:
         continue
+    # print(shop_head)
+    link = shop_head.find('a')['href']
+    
     shop_name = shop_head.find('a').text
+    
+
     print(shop_name)
+    # print(shop_url)
+
 
     author = shop.find('span', class_='c-byline__author-name')
     author = author.text
@@ -24,5 +31,6 @@ for shop in shop_elements:
     time = shop.find('time', class_='c-byline__item')
     time = time.get_text(strip=True)
     print(time)
-    print('\n')
 
+    print(link)
+    print('\n')
